@@ -18,13 +18,13 @@
         public function prikazi_pitanje() {
             echo   "<br><br><div class='container-fluid px-5'>
                         <h3 class='px-3'> $this->redni_broj. $this->pitanje </h3>" .
-                        ($this->tip_pitanja == "checkbox" ? "<div class='px-3'> (Mozete odabrati vise odgovora ili nijedan)</div>" : "") .
+                        ($this->tip_pitanja === "checkbox" ? "<div class='px-3'> (Mozete odabrati vise odgovora ili nijedan)</div>" : "") .
                         "<div class=' row btn-group btn-group-toggle col-12' data-toggle='buttons'>";
 
             $col = 4;
-            if (count($this->odgovori) == 2)
+            if (count($this->odgovori) === 2)
                 $col = 6;
-            else if (count($this->odgovori) == 4)
+            else if (count($this->odgovori) === 4)
                 $col = 3;
 
             foreach ($this->odgovori as $odg) {
