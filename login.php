@@ -5,13 +5,12 @@
 $greska = false;
 
 if (isset($_POST["korisnickoIme"]) || isset($_POST["lozinka"])) {
-    include_once "inc/dbh.php";
+    include_once "inc/db.php";
     $korisnickoIme = $_POST["korisnickoIme"];
     $lozinka = $_POST["lozinka"];
 
-    $dbh = new DBH();
-    $rez = $dbh->query("SELECT * FROM Korisnik WHERE korisnicko_ime = '$korisnickoIme' AND lozinka = '$lozinka';");
-    $dbh->close();
+    $rez = izvrsi_upit("SELECT * FROM korisnik WHERE korisnicko_ime = '$korisnickoIme' AND lozinka = '$lozinka';");
+
 
     if ($rez->num_rows > 0) {
         $row = $rez->fetch_assoc();

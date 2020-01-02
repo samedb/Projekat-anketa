@@ -16,11 +16,9 @@ try {
 
     $korisnik = $_SESSION["korisnik"];
 
-    include "inc/dbh.php";
-    $dbh = new DBH();
-    $dbh->query("INSERT INTO `anketa` (`korisnicko_ime`, `tip`, `koriscenje`, `os`, `iskustvo`, `cpu`, `ram`, `gpu`, `vreme`, `igre`, `popravka`, `napomena`) 
+    include "inc/db.php";
+    izvrsi_upit("INSERT INTO `anketa` (`korisnicko_ime`, `tip`, `koriscenje`, `os`, `iskustvo`, `cpu`, `ram`, `gpu`, `vreme`, `igre`, `popravka`, `napomena`) 
                  VALUES ('$korisnik', '$tip', '$koriscenje', '$os', '$iskustvo', '$cpu', '$ram', '$gpu', '$vreme', '$igre', '$popravka', '$napomena');");
-    $dbh->close();
     echo "<h1>Anketa uspesno uneta</h1>";
 } catch (Exception $e) {
     echo "<h1>Greska prilikom unosa ankete</h1>";

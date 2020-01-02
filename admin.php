@@ -7,17 +7,15 @@
         echo '<a href="index.php">Nazad na pocetnu stranicu</a>';
     } 
     else {
-        include_once "inc/dbh.php";
-        $dbh = new DBH();
+        include_once "inc/db.php";
         // Ako ima sta da se brise onda izbrisi
         if (isset($_GET["za_brisanje"])) {
             $za_brisanje = $_GET["za_brisanje"];
-            $dbh->query("DELETE FROM anketa WHERE korisnicko_ime = '$za_brisanje'");
+            izvrsi_upit("DELETE FROM anketa WHERE korisnicko_ime = '$za_brisanje'");
         }
 
         // Uzmi sve ankete iz baze
-        $result = $dbh->query("SELECT * FROM anketa;");
-        $dbh->close();
+        $result = izvrsi_upit("SELECT * FROM anketa;");
 ?>
 <table class="table table-striped">
     <thead class="thead-dark">

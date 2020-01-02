@@ -4,11 +4,11 @@
 include "inc/Chart.php";
 include "inc/header.php";
 include "inc/Pitanje.php";
-include "inc/dbh.php";
+include "inc/db.php";
 
 // Uzimam sve rezultate anketa iz tabele anketa
-$dbh = new DBH();
-$result = $dbh->query("SELECT * FROM anketa;");
+;
+$result = izvrsi_upit("SELECT * FROM anketa;");
 
 $matrica = null;
 

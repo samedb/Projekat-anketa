@@ -10,7 +10,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img src="img\SIVA.bmp" alt="First slide">
+                <img src="img\SIVA.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>Ovo ce da se popuni.</h1>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img\SIVA.bmp" alt="Second slide">
+                <img src="img\SIVA.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Another example headline.</h1>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img\SIVA.bmp" alt="Third slide">
+                <img src="img\SIVA.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption text-right">
                         <h1>One more for good measure.</h1>

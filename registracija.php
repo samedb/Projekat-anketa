@@ -21,25 +21,23 @@ if (isset($_POST["ime"]) && isset($_POST["prezime"]) && isset($_POST["email"]) &
 
     // proveravamo da li je sve ispravno
     try {
-        include_once "inc/dbh.php";
-        $dbh = new DBH();
-        $result = $dbh->query("SELECT * FROM Korisnik WHERE korisnicko_ime = '$korisnicko_ime';");
+        include_once "inc/db.php";
+        $result = izvrsi_upit("SELECT * FROM korisnik WHERE korisnicko_ime = '$korisnicko_ime';");
         if ($result->num_rows > 0) 
             throw new Exception("Ovo korisnicko ime je vec zauzeto!");
 
-        $result = $dbh->query("SELECT * FROM Korisnik WHERE email = '$email';");
+        $result = izvrsi_upit("SELECT * FROM korisnik WHERE email = '$email';");
         if ($result->num_rows > 0) 
             throw new Exception("Na ovom emailu je vec registrovan jedan nalog!");
 
         if ($lozinka1 != $lozinka2)
             throw new Exception("Lozinke koje ste uneli se ne poklapaju!");
 
-        $dbh->query("INSERT INTO Korisnik VALUES ('$korisnicko_ime', '$ime', '$prezime', '$email', '$lozinka1', '$adresa', '$jmbg', '$telefon', 'korisnik');");
+            izvrsi_upit("INSERT INTO korisnik VALUES ('$korisnicko_ime', '$ime', '$prezime', '$email', '$lozinka1', '$adresa', '$jmbg', '$telefon', 'korisnik');");
         header("Location:uspesno_kreiran_nalog.php");
     } catch (Exception $e) {
         $greska = $e->getMessage();
     }
-    $dbh->close();
 }
 
 ?>
