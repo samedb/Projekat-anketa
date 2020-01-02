@@ -21,6 +21,7 @@ if (isset($_POST["korisnickoIme"]) || isset($_POST["lozinka"])) {
             session_start();
         $_SESSION["korisnik"] = $korisnickoIme;
         $_SESSION["tip_korisnika"] = $row["tip_korisnika"];
+        header("Location:index.php");
     } else {
         $greska = true;
     }
@@ -32,7 +33,7 @@ if (isset($_POST["korisnickoIme"]) || isset($_POST["lozinka"])) {
     <form action="login.php" method="POST">
         <div class="form-group text-left">
             <label>Korisnicko ime</label>
-            <input type="text" class="form-control" name="korisnickoIme">
+            <input type="text" class="form-control" name="korisnickoIme" autofocus>
         </div>
         <div class="form-group text-left">
             <label>Lozinka</label>

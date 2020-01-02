@@ -17,10 +17,6 @@ class DBH {
         } 
     }
 
-    public function __destruct()
-    {
-        $this->close();
-    }
 
     public function query($sql) {
         return $this->conn->query($sql);
