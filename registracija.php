@@ -31,7 +31,7 @@ if (isset($_POST["ime"]) && isset($_POST["prezime"]) && isset($_POST["email"]) &
         if ($result->num_rows > 0) 
             throw new Exception("Na ovom emailu je vec registrovan jedan nalog!");
 
-        if (strcmp($lozinka1, $lozinka2) != 0)
+        if ($lozinka1 != $lozinka2)
             throw new Exception("Lozinke koje ste uneli se ne poklapaju!");
 
         $dbh->query("INSERT INTO Korisnik VALUES ('$korisnicko_ime', '$ime', '$prezime', '$email', '$lozinka1', '$adresa', '$jmbg', '$telefon', 'korisnik');");
@@ -44,7 +44,7 @@ if (isset($_POST["ime"]) && isset($_POST["prezime"]) && isset($_POST["email"]) &
 
 ?>
 
-<form action="" method="post">
+<form action="" method="post" class="mx-5">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Ime*</label>
@@ -91,7 +91,7 @@ if (isset($_POST["ime"]) && isset($_POST["prezime"]) && isset($_POST["email"]) &
     </div>
     <small>Polja koja su oznacena sa * su obavezna</small>
     <?php
-        if (strcmp($greska, "") != 0)
+        if ($greska != "")
             echo    '<div class="text-center">
                         <p class="text-center text-danger">' . $greska . '</p>
                     </div>';

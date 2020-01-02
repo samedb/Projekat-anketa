@@ -1,10 +1,10 @@
 <?php
     class Pitanje {
-        private $redni_broj;
-        private $pitanje;
-        private $key;
-        private $odgovori;
-        private $tip_pitanja;  
+        public $redni_broj;
+        public $pitanje;
+        public $key;
+        public $odgovori;
+        public $tip_pitanja;  
         
         public function __construct($rb, $p, $k, $odg, $tip)
         {
@@ -36,6 +36,11 @@
             echo       "</div>
                     </div>";
         }
+
+        public function __toString()
+        {
+            return "$this->redni_broj. $this->pitanje";
+        }
     }
 
    
@@ -48,5 +53,5 @@
                        new Pitanje(7,  "Graficka kartica?",                              "gpu[]",        ["Nvidia", "AMD", "Intel"],                                                               "checkbox"),
                        new Pitanje(8,  "Koliko vremena dnevno provodite na racunaru?",   "vreme",        ["1 cas ili manje", "2-3 casa", "3-4 casa", "5 casova ili vise"],                         "radio"),
                        new Pitanje(9,  "Da li koristite vas racunar za igranje igrica?", "igre",         ["Da", "Ne"],                                                                             "radio"),
-                       new Pitanje(10, "Da li sami popravljate racunar?",                "popravka",     ["Ne, nosim ga u servis", "Popravljam neke sitnice", "Resavam sve probleme sam"],         "radio")];
+                       new Pitanje(10, "Da li sami popravljate racunar?",                "popravka",     ["Nosim ga u servis", "Popravljam neke sitnice", "Resavam sve probleme sam"],         "radio")];
     ?>

@@ -11,16 +11,16 @@ $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], 
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item <?php if (strcmp($curPageName, "index.php") == 0) echo "active"; ?>">
+      <li class="nav-item <?php if ($curPageName === "index.php") echo "active"; ?>">
         <a class="nav-link" href="index.php">Informacije o problemu</a>
       </li>
-      <li class="nav-item <?php if (strcmp($curPageName, "anketa.php") == 0) echo "active"; ?>">
+      <li class="nav-item <?php if ($curPageName === "anketa.php") echo "active"; ?>">
         <a class="nav-link" href="anketa.php">Anketa</a>
       </li>
-      <li class="nav-item <?php if (strcmp($curPageName, "rezultati.php") == 0) echo "active"; ?>">
+      <li class="nav-item <?php if ($curPageName === "rezultati.php") echo "active"; ?>">
         <a class="nav-link" href="rezultati.php">Rezultati ankete</a>
       </li>
-      <li class="nav-item <?php if (strcmp($curPageName, "admin.php") == 0) echo "active"; ?>">
+      <li class="nav-item <?php if ($curPageName === "admin.php") echo "active"; ?>">
         <a class="nav-link" href="admin.php">Admin</a>
       </li>
     </ul>
