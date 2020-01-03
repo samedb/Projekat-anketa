@@ -17,5 +17,5 @@
 <body>
     <?php  require "inc/navbar.php"; ?>
     <br>
-    <section class="px-5 pt-5">
+    <section class="px-md-5 pt-5">
     <br>
