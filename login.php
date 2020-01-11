@@ -9,7 +9,7 @@ if (isset($_POST["korisnickoIme"]) || isset($_POST["lozinka"])) {
     $korisnickoIme = $_POST["korisnickoIme"];
     $lozinka = $_POST["lozinka"];
 
-    $rez = izvrsi_upit("SELECT * FROM korisnik WHERE korisnicko_ime = ? AND lozinka = ?;", "ss", $korisnickoIme, $lozinka);
+    $rez = izvrsi_upit("SELECT * FROM korisnik WHERE korisnicko_ime = ? AND lozinka = ?;", "ss", $korisnickoIme, hash("sha256", $lozinka));
 
 
     if ($rez->num_rows > 0) {

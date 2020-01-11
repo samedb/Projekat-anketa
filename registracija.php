@@ -33,7 +33,7 @@ if (isset($_POST["ime"]) && isset($_POST["prezime"]) && isset($_POST["email"]) &
         if ($lozinka1 != $lozinka2)
             throw new Exception("Lozinke koje ste uneli se ne poklapaju!");
 
-        izvrsi_upit("INSERT INTO korisnik VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", "sssssssss", $korisnicko_ime, $ime, $prezime, $email, $lozinka1, $adresa, $jmbg, $telefon, "korisnik");
+        izvrsi_upit("INSERT INTO korisnik VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", "sssssssss", $korisnicko_ime, $ime, $prezime, $email, hash("sha256", $lozinka1), $adresa, $jmbg, $telefon, "korisnik");
         header("Location:uspesno_kreiran_nalog.php");
     } catch (Exception $e) {
         $greska = $e->getMessage();
