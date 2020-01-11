@@ -9,7 +9,7 @@
 <?php
     function da_li_je_uneta_anketa($korisnicko_ime) {
         include_once 'inc/db.php';
-        $result = izvrsi_upit("SELECT * FROM anketa WHERE korisnicko_ime = '$korisnicko_ime';");
+        $result = izvrsi_upit("SELECT * FROM anketa WHERE korisnicko_ime = ?;", "s", $korisnicko_ime);
         return $result->num_rows > 0;
     }
 

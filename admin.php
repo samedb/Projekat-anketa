@@ -11,7 +11,7 @@
         // Ako ima sta da se brise onda izbrisi
         if (isset($_GET["za_brisanje"])) {
             $za_brisanje = $_GET["za_brisanje"];
-            izvrsi_upit("DELETE FROM anketa WHERE korisnicko_ime = '$za_brisanje'");
+            izvrsi_upit("DELETE FROM anketa WHERE korisnicko_ime = ?", "s", $za_brisanje);
         }
 
         // Uzmi sve ankete iz baze

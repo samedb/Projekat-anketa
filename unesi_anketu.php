@@ -18,7 +18,7 @@ try {
 
     include "inc/db.php";
     izvrsi_upit("INSERT INTO `anketa` (`korisnicko_ime`, `tip`, `koriscenje`, `os`, `iskustvo`, `cpu`, `ram`, `gpu`, `vreme`, `igre`, `popravka`, `napomena`) 
-                 VALUES ('$korisnik', '$tip', '$koriscenje', '$os', '$iskustvo', '$cpu', '$ram', '$gpu', '$vreme', '$igre', '$popravka', '$napomena');");
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", "ssssssssssss", $korisnik, $tip, $koriscenje, $os, $iskustvo, $cpu, $ram, $gpu, $vreme, $igre, $popravka, $napomena);
     echo "<h1>Anketa uspesno uneta</h1>";
 } catch (Exception $e) {
     echo "<h1>Greska prilikom unosa ankete</h1>";
