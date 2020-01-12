@@ -10,17 +10,17 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img src="img\SIVA.jpg" alt="First slide">
+                <img src="img\carousel1.jpg" width="100%">
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>Ulogujte se i popunite anketu.</h1>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Ulogujte se</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="login.php" role="button">Ulogujte se</a></p>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img\SIVA.jpg" alt="Second slide">
+                <img src="img\carousel3.jpg" width="100%">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Informacije o anketi</h1>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img\SIVA.jpg" alt="Third slide">
+                <img src="img\carousel2.jpg" width="100%">
                 <div class="container">
                     <div class="carousel-caption text-right">
                         <h1>Nemate nalog? Registurjte se!</h1>

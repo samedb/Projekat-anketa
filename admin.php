@@ -31,6 +31,7 @@
             <th>Vreme</th>
             <th>Igre</th>
             <th>Popravka</th>
+            <th>Sumnjiv</th>
             <th></th>
         </tr>
     </thead>
@@ -48,6 +49,7 @@
                         <td>' . $row["vreme"] . '</td>
                         <td>' . $row["igre"] . '</td>
                         <td>' . $row["popravka"] . '</td>
+                        <td>' . ($row["sumnjiv"] == true ? "&#9888;" : "") . '</td>
                         <td><a href="admin.php?za_brisanje=' . $row["korisnicko_ime"] . '">Brisi</a></td>
                       </tr>';
             }

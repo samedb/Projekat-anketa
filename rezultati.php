@@ -18,7 +18,7 @@ error_reporting(error_reporting() & ~E_NOTICE);
 // prebrojim ih i stavim ih u $matrica
 while ($row = $result->fetch_assoc()) {
     foreach ($row as $key => $atribut) {
-        if ($key != "korisnicko_ime" && $key != "napomena")
+        if ($key != "korisnicko_ime" && $key != "napomena" && $key != "sumnjiv")
             foreach (explode(",", $atribut) as $value) {
                 $matrica[$key][$value]++;
             }
